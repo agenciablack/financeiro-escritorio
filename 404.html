@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Agência Black - Controle Financeiro</title>
+    <script>
+      // SPA redirect for GitHub Pages
+      // Detects the repo base path and redirects to index.html
+      // preserving the SPA route in sessionStorage
+      var pathSegments = location.pathname.split('/');
+      // For user.github.io/repo-name/, the base is /repo-name/
+      // For user.github.io/, the base is /
+      // We find the base by looking at the script tag in index.html
+      // Simple approach: store full path, redirect to same directory as current origin
+      var repo = pathSegments.length > 1 ? '/' + pathSegments[1] + '/' : '/';
+      sessionStorage.setItem('spa-redirect', location.pathname + location.search + location.hash);
+      location.replace(repo);
+    </script>
+  </head>
+  <body></body>
+</html>
